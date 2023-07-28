@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css">
+    <title>Cabeleila Leila</title>
+</head>
+<body class="index__body">
+    <div class="index__container">
+        <div class="index__content-top">
+            <div class="index__left">
+                <h1 class="index__header-title">
+                    Cabeleila Leila <span class="ui__text--green">Salão de Beleiza</span> 
+                </h1>
+                <div class="index__header-subtitle">
+                    Agente seu horário, venha ficar mais bela do que nunca!<span class="ui__text--green">!</span>!
+                </div>
+            </div>
+            <div class="index__right">
+                <svg class="index__header-illustration" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="677.185" height="487.904" viewBox="0 0 677.185 487.904">
+                    <defs><clipPath id="index-header-illustration-mask"><rect width="345" height="345" rx="70" transform="translate(943.145 161.33) rotate(-45)" fill="#e7e7f2"/></clipPath></defs>
+                    <g transform="translate(-869.257 -111.5)">
+                        <g transform="translate(87.859 194.122)" clip-path="url(#index-header-illustration-mask)">
+                            <image width="488" height="488" transform="translate(943.141 -83.122)" xlink:href="./img/index-photo.png"/>
+                        </g>
+                        <g class="index__animation-1" transform="translate(869.257 421.688) rotate(-45)" fill="none" stroke="#4abec6" stroke-width="1">
+                            <rect width="206.112" height="206.112" rx="40" stroke="none"/>
+                            <rect x="0.5" y="0.5" width="205.112" height="205.112" rx="39.5" fill="none"/>
+                        </g>
+                        <g class="index__animation-2" transform="translate(882.711 498.056) rotate(-45)" fill="none" stroke="#4abec6" stroke-width="1">
+                            <rect width="98.112" height="98.112" rx="20" stroke="none"/>
+                            <rect x="0.5" y="0.5" width="97.112" height="97.112" rx="19.5" fill="none"/>
+                        </g>
+                        <rect class="index__animation-3" width="78.895" height="78.895" rx="20" transform="translate(990 183.713) rotate(-45)" fill="#4abec6"/>
+                        <rect class="index__animation-4" width="50" height="50" rx="15" transform="translate(924.645 211.5) rotate(-45)" fill="#4abec6"/>
+                        <rect class="index__animation-5" width="50" height="50" rx="15" transform="translate(1475.731 532.075) rotate(-45)" fill="#4abec6"/>
+                        <rect class="index__animation-6" width="33.31" height="33.31" rx="10" transform="translate(1410 498.056) rotate(-45)" fill="#4abec6"/>
+                    </g>
+                </svg>
+            </div>
+        </div>
+        <div class="index__content-bottom">
+            <!-- Formulário para adicionar eventos -->
+        <div id="eventForm">
+            <h3>Adicionar Evento</h3>
+            <label for="title">Título:</label>
+            <input type="text" id="title" required><br>
+            <label for="start">Data de Início:</label>
+            <input type="datetime-local" id="start" required><br>
+            <label for="end">Data de Término:</label>
+            <input type="datetime-local" id="end" required><br>
+            <button id="btnAddEvent">Adicionar</button>
+            <button id="btnCancel">Cancelar</button>
+        </div>
+            <div id="calendar"></div>
+        </div>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@6.1.8/index.global.min.js'></script>
+<script src="./js/main.js"></script>
+</html>
+
+
+    <!-- <h1>Cadastro de Colaborador</h1>
+    <form id="cadastroForm">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" required>
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" required>
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" required>
+        <label for="telefone">Telefone:</label>
+        <input type="text" id="telefone">
+        <button type="submit">Cadastrar</button>
+    </form>
+
+    <div>
+        <label for="selectColaborador">Selecione um colaborador:</label>
+        <select id="selectColaborador"></select>
+    </div> -->

@@ -1,0 +1,213 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+   color: #666;
+   font-family: 'Poppins', sans-serif;
+   font-size: 14px;
+   line-height: 20px;
+   overflow-x: hidden;
+}
+
+/* headers */
+
+h1,
+h2,
+h3 {}
+.ui__text--green { color: #67ebf5;}
+/* paragraph */
+
+p { margin: 0px; }
+hr { border: 0px; }
+svg {}
+
+.index__animation-1 {
+    animation: ui-header-illustration-animation-1 2.5s infinite alternate;
+}
+
+@keyframes ui-header-illustration-animation-1 {
+    0% { transform: translate(869.257px, 421.688px) rotate(-45deg); }
+    100% { transform: translate(899.257px, 421.688px) rotate(-45deg); }
+}
+
+.index__animation-2 {
+    animation: ui-header-illustration-animation-2 2.5s 1s infinite alternate;
+}
+
+@keyframes ui-header-illustration-animation-2 {
+    0% { transform: translate(882.711px, 498.056px) rotate(-45deg); }
+    100% { transform: translate(912.711px, 468.056px) rotate(-45deg); }
+}
+
+.index__animation-3 {
+    animation: ui-header-illustration-animation-3 2.5s infinite alternate;
+}
+
+@keyframes ui-header-illustration-animation-3 {
+    0% { transform: translate(990px, 183.713px) rotate(-45deg); }
+    100% { transform: translate(1020px, 183.713px) rotate(-45deg); }
+}
+
+.index__animation-4 {
+    animation: ui-header-illustration-animation-4 2.5s 1s infinite alternate;
+}
+
+@keyframes ui-header-illustration-animation-4 {
+    0% { transform: translate(924.645px, 211.5px) rotate(-45deg); }
+    100% { transform: translate(954.645px, 241.5px) rotate(-45deg); }
+}
+
+.index__animation-5 {
+    animation: ui-header-illustration-animation-5 2.5s infinite alternate;
+}
+
+@keyframes ui-header-illustration-animation-5 {
+    0% { transform: translate(1475.731px, 532.075px) rotate(-45deg); }
+    100% { transform: translate(1445.731px, 502.075px) rotate(-45deg); }
+}
+
+.index__animation-6 {
+    animation: ui-header-illustration-animation-6 2.5s 1s infinite alternate;
+}
+
+@keyframes ui-header-illustration-animation-6 {
+    0% { transform: translate(1410px, 498.056px) rotate(-45deg); }
+    100% { transform: translate(1380px, 528.056px) rotate(-45deg); }
+}
+
+
+
+
+/* = index
+   ========================================================================== */
+
+.index__body {
+    background: url('./img/background-leilasalao.jpg') 50% 0 no-repeat;
+}
+
+.index__container {
+    width: 100%;
+    height: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0px 30px;
+}
+
+.index__content-top {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+
+.index__header-title {
+    width: 420px;
+    margin-top: 60px;
+    color: #fff;
+    font-size: 45px;
+    line-height: 60px;
+}
+
+.index__header-subtitle {
+    width: 300px;
+    color: #fff;
+    font-size: 24px;
+    line-height: 35px;
+}
+
+.index__header-illustration {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+
+/* ==========================================================================
+   = breakpoint xl ( 1340px - 1600px )
+   ========================================================================== */
+
+@media (max-width: 1600px) {
+
+.ui__display--xl-none { display: none !important; }
+.ui__display--xl-block { display: block !important; }
+
+
+}
+
+/* ==========================================================================
+   = breakpoint lg ( 1080px - 1340px )
+   ========================================================================== */
+
+@media (max-width: 1340px) {
+
+.ui__display--lg-none { display: none !important; }
+.ui__display--lg-block { display: block !important; }
+
+/* = index
+    ========================================================================== */
+    
+.index__body {
+    background: url('./img/background-leilasalao-lg.jpg') 50% 0 no-repeat;
+}
+
+
+}
+
+/* ==========================================================================
+   = breakpoint md ( 820px - 1080px )
+   ========================================================================== */
+
+
+@media screen and (max-width: 1080px) {
+
+.ui__display--md-none { display: none !important; }
+.ui__display--md-block { display: block !important; }
+
+/* = index
+    ========================================================================== */
+
+    .index__body {
+        background: url('./img/background-leilasalao-md.jpg') 50% 0 no-repeat;
+    }
+
+}
+
+/* ==========================================================================
+   = breakpoint sm ( 567px - 820px )
+   ========================================================================== */
+
+@media screen and (max-width: 820px) {
+
+.ui__display--sm-none { display: none !important; }
+.ui__display--sm-block { display: block !important; }
+
+/* = index
+    ========================================================================== */
+
+
+}
+
+
+
+/* ==========================================================================
+   = breakpoint xs ( 0px - 567px )
+   ========================================================================== */
+
+@media screen and (max-width: 567px) {
+
+.ui__display--xs-none { display: none !important; }
+.ui__display--xs-block { display: block !important; }
+
+/* = index
+    ========================================================================== */
+
+    .index__body {
+        background: url('./img/background-leilasalao-mobile.jpg') 50% 0 no-repeat;
+    }
+ 
+
+}
