@@ -3,12 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+
+    <!-- FAVICONS -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,700&display=swap" rel="stylesheet">
+    <!-- MY CSS -->
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css">
+    <!-- BOOTSTRAP CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <title>Cabeleila Leila</title>
 </head>
 <body class="index__body">
-    <div class="index__container">
+    <div class="wrapper">
         <div class="index__content-top">
             <div class="index__left">
                 <h1 class="index__header-title">
@@ -42,42 +58,139 @@
             </div>
         </div>
         <div class="index__content-bottom">
-            <!-- Formulário para adicionar eventos -->
-        <div id="eventForm">
-            <h3>Adicionar Evento</h3>
-            <label for="title">Título:</label>
-            <input type="text" id="title" required><br>
-            <label for="start">Data de Início:</label>
-            <input type="datetime-local" id="start" required><br>
-            <label for="end">Data de Término:</label>
-            <input type="datetime-local" id="end" required><br>
-            <button id="btnAddEvent">Adicionar</button>
-            <button id="btnCancel">Cancelar</button>
-        </div>
-            <div id="calendar"></div>
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Agenda Cabeleila Leila</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div id="calendar"></div>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div id="eventForm">
+                <h2 class="index__title">Agendar Horário</h2>
+                <label class="index__label" for="title">Digite seu nome:</label>
+                <input class="index__input" type="text" id="title" placeholder="Seu nome" required>
+                <label class="index__label" for="start">Data e hora:</label>
+                <input class="index__input" type="datetime-local" id="start" required>
+                <label class="index__label" for="description">Digite seu telefone:</label>
+                <input class="index__input" type="text" id="description" placeholder="Ex. (14) 99999-9999" required>
+                <button id="btnAddEvent">Agendar</button>
+                <button id="modal-btn" type="button" class="index__modal--btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Ver todos os horários
+                </button>
+            </div>
+            <div class="index__table">
+                <div class="index__table-row">
+                    <div class="index__icon">
+                        <svg class="index__icon-img" width="35.317" height="22.75" viewBox="0 0 35.317 22.75"><g transform="translate(0 -6.283)"><path d="M26.969,12.34a8.228,8.228,0,0,0-2.221.309,8.3,8.3,0,0,0-8.1-6.366,8.4,8.4,0,0,0-8.023,6.064c-.092,0-.185-.007-.277-.007a8.346,8.346,0,0,0,0,16.693H26.969a8.346,8.346,0,1,0,0-16.693Zm0,15.554H8.346a7.206,7.206,0,1,1,0-14.412c.223,0,.443.012.662.033l.5.045.107-.488a7.244,7.244,0,0,1,7.031-5.648,7.165,7.165,0,0,1,7.1,6.053l.109.68.648-.236a7.2,7.2,0,1,1,2.461,13.973Z" fill="#009bb4"/><path d="M22.4,15.363a.557.557,0,0,0-.787,0l-6.578,6.576-3.389-3.406a.552.552,0,0,0-.789,0L9.667,19.715a.561.561,0,0,0,0,.793L14.634,25.5a.559.559,0,0,0,.789,0l8.162-8.162a.551.551,0,0,0,0-.791Z" fill="#009bb4"/></g></svg>
+                    </div>
+                    <p class="index__text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus justo. Sed maximus
+                    </p>
+                </div>
+                <div class="index__table-row">
+                    <div class="index__icon">
+                        <svg class="index__icon-img" width="35.317" height="22.75" viewBox="0 0 35.317 22.75"><g transform="translate(0 -6.283)"><path d="M26.969,12.34a8.228,8.228,0,0,0-2.221.309,8.3,8.3,0,0,0-8.1-6.366,8.4,8.4,0,0,0-8.023,6.064c-.092,0-.185-.007-.277-.007a8.346,8.346,0,0,0,0,16.693H26.969a8.346,8.346,0,1,0,0-16.693Zm0,15.554H8.346a7.206,7.206,0,1,1,0-14.412c.223,0,.443.012.662.033l.5.045.107-.488a7.244,7.244,0,0,1,7.031-5.648,7.165,7.165,0,0,1,7.1,6.053l.109.68.648-.236a7.2,7.2,0,1,1,2.461,13.973Z" fill="#009bb4"/><path d="M22.4,15.363a.557.557,0,0,0-.787,0l-6.578,6.576-3.389-3.406a.552.552,0,0,0-.789,0L9.667,19.715a.561.561,0,0,0,0,.793L14.634,25.5a.559.559,0,0,0,.789,0l8.162-8.162a.551.551,0,0,0,0-.791Z" fill="#009bb4"/></g></svg>
+                    </div>
+                    <p class="index__text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus justo. Sed maximus
+                    </p>
+                </div>
+                <div class="index__table-row">
+                    <div class="index__icon">
+                        <svg class="index__icon-img" width="35.317" height="22.75" viewBox="0 0 35.317 22.75"><g transform="translate(0 -6.283)"><path d="M26.969,12.34a8.228,8.228,0,0,0-2.221.309,8.3,8.3,0,0,0-8.1-6.366,8.4,8.4,0,0,0-8.023,6.064c-.092,0-.185-.007-.277-.007a8.346,8.346,0,0,0,0,16.693H26.969a8.346,8.346,0,1,0,0-16.693Zm0,15.554H8.346a7.206,7.206,0,1,1,0-14.412c.223,0,.443.012.662.033l.5.045.107-.488a7.244,7.244,0,0,1,7.031-5.648,7.165,7.165,0,0,1,7.1,6.053l.109.68.648-.236a7.2,7.2,0,1,1,2.461,13.973Z" fill="#009bb4"/><path d="M22.4,15.363a.557.557,0,0,0-.787,0l-6.578,6.576-3.389-3.406a.552.552,0,0,0-.789,0L9.667,19.715a.561.561,0,0,0,0,.793L14.634,25.5a.559.559,0,0,0,.789,0l8.162-8.162a.551.551,0,0,0,0-.791Z" fill="#009bb4"/></g></svg>
+                    </div>
+                    <p class="index__text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus justo. Sed maximus
+                    </p>
+                </div>
+                <div class="index__table-row">
+                    <div class="index__icon">
+                        <svg class="index__icon-img" width="35.317" height="22.75" viewBox="0 0 35.317 22.75"><g transform="translate(0 -6.283)"><path d="M26.969,12.34a8.228,8.228,0,0,0-2.221.309,8.3,8.3,0,0,0-8.1-6.366,8.4,8.4,0,0,0-8.023,6.064c-.092,0-.185-.007-.277-.007a8.346,8.346,0,0,0,0,16.693H26.969a8.346,8.346,0,1,0,0-16.693Zm0,15.554H8.346a7.206,7.206,0,1,1,0-14.412c.223,0,.443.012.662.033l.5.045.107-.488a7.244,7.244,0,0,1,7.031-5.648,7.165,7.165,0,0,1,7.1,6.053l.109.68.648-.236a7.2,7.2,0,1,1,2.461,13.973Z" fill="#009bb4"/><path d="M22.4,15.363a.557.557,0,0,0-.787,0l-6.578,6.576-3.389-3.406a.552.552,0,0,0-.789,0L9.667,19.715a.561.561,0,0,0,0,.793L14.634,25.5a.559.559,0,0,0,.789,0l8.162-8.162a.551.551,0,0,0,0-.791Z" fill="#009bb4"/></g></svg>
+                    </div>
+                    <p class="index__text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus justo. Sed maximus
+                    </p>
+                </div>
+                <div class="index__table-row">
+                    <div class="index__icon">
+                        <svg class="index__icon-img" width="35.317" height="22.75" viewBox="0 0 35.317 22.75"><g transform="translate(0 -6.283)"><path d="M26.969,12.34a8.228,8.228,0,0,0-2.221.309,8.3,8.3,0,0,0-8.1-6.366,8.4,8.4,0,0,0-8.023,6.064c-.092,0-.185-.007-.277-.007a8.346,8.346,0,0,0,0,16.693H26.969a8.346,8.346,0,1,0,0-16.693Zm0,15.554H8.346a7.206,7.206,0,1,1,0-14.412c.223,0,.443.012.662.033l.5.045.107-.488a7.244,7.244,0,0,1,7.031-5.648,7.165,7.165,0,0,1,7.1,6.053l.109.68.648-.236a7.2,7.2,0,1,1,2.461,13.973Z" fill="#009bb4"/><path d="M22.4,15.363a.557.557,0,0,0-.787,0l-6.578,6.576-3.389-3.406a.552.552,0,0,0-.789,0L9.667,19.715a.561.561,0,0,0,0,.793L14.634,25.5a.559.559,0,0,0,.789,0l8.162-8.162a.551.551,0,0,0,0-.791Z" fill="#009bb4"/></g></svg>
+                    </div>
+                    <p class="index__text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus justo. Sed maximus
+                    </p>
+                </div>
+                <div class="index__table-row">
+                    <div class="index__icon">
+                        <svg class="index__icon-img" width="35.317" height="22.75" viewBox="0 0 35.317 22.75"><g transform="translate(0 -6.283)"><path d="M26.969,12.34a8.228,8.228,0,0,0-2.221.309,8.3,8.3,0,0,0-8.1-6.366,8.4,8.4,0,0,0-8.023,6.064c-.092,0-.185-.007-.277-.007a8.346,8.346,0,0,0,0,16.693H26.969a8.346,8.346,0,1,0,0-16.693Zm0,15.554H8.346a7.206,7.206,0,1,1,0-14.412c.223,0,.443.012.662.033l.5.045.107-.488a7.244,7.244,0,0,1,7.031-5.648,7.165,7.165,0,0,1,7.1,6.053l.109.68.648-.236a7.2,7.2,0,1,1,2.461,13.973Z" fill="#009bb4"/><path d="M22.4,15.363a.557.557,0,0,0-.787,0l-6.578,6.576-3.389-3.406a.552.552,0,0,0-.789,0L9.667,19.715a.561.561,0,0,0,0,.793L14.634,25.5a.559.559,0,0,0,.789,0l8.162-8.162a.551.551,0,0,0,0-.791Z" fill="#009bb4"/></g></svg>
+                    </div>
+                    <p class="index__text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus justo. Sed maximus
+                    </p>
+                </div>
+                <div class="index__table-row">
+                    <div class="index__icon">
+                        <svg class="index__icon-img" width="35.317" height="22.75" viewBox="0 0 35.317 22.75"><g transform="translate(0 -6.283)"><path d="M26.969,12.34a8.228,8.228,0,0,0-2.221.309,8.3,8.3,0,0,0-8.1-6.366,8.4,8.4,0,0,0-8.023,6.064c-.092,0-.185-.007-.277-.007a8.346,8.346,0,0,0,0,16.693H26.969a8.346,8.346,0,1,0,0-16.693Zm0,15.554H8.346a7.206,7.206,0,1,1,0-14.412c.223,0,.443.012.662.033l.5.045.107-.488a7.244,7.244,0,0,1,7.031-5.648,7.165,7.165,0,0,1,7.1,6.053l.109.68.648-.236a7.2,7.2,0,1,1,2.461,13.973Z" fill="#009bb4"/><path d="M22.4,15.363a.557.557,0,0,0-.787,0l-6.578,6.576-3.389-3.406a.552.552,0,0,0-.789,0L9.667,19.715a.561.561,0,0,0,0,.793L14.634,25.5a.559.559,0,0,0,.789,0l8.162-8.162a.551.551,0,0,0,0-.791Z" fill="#009bb4"/></g></svg>
+                    </div>
+                    <p class="index__text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus justo. Sed maximus
+                    </p>
+                </div>
+                <div class="index__table-row">
+                    <div class="index__icon">
+                        <svg class="index__icon-img" width="35.317" height="22.75" viewBox="0 0 35.317 22.75"><g transform="translate(0 -6.283)"><path d="M26.969,12.34a8.228,8.228,0,0,0-2.221.309,8.3,8.3,0,0,0-8.1-6.366,8.4,8.4,0,0,0-8.023,6.064c-.092,0-.185-.007-.277-.007a8.346,8.346,0,0,0,0,16.693H26.969a8.346,8.346,0,1,0,0-16.693Zm0,15.554H8.346a7.206,7.206,0,1,1,0-14.412c.223,0,.443.012.662.033l.5.045.107-.488a7.244,7.244,0,0,1,7.031-5.648,7.165,7.165,0,0,1,7.1,6.053l.109.68.648-.236a7.2,7.2,0,1,1,2.461,13.973Z" fill="#009bb4"/><path d="M22.4,15.363a.557.557,0,0,0-.787,0l-6.578,6.576-3.389-3.406a.552.552,0,0,0-.789,0L9.667,19.715a.561.561,0,0,0,0,.793L14.634,25.5a.559.559,0,0,0,.789,0l8.162-8.162a.551.551,0,0,0,0-.791Z" fill="#009bb4"/></g></svg>
+                    </div>
+                    <p class="index__text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus justo. Sed maximus
+                    </p>
+                </div>
+                <div class="index__table-row">
+                    <div class="index__icon">
+                        <svg class="index__icon-img" width="35.317" height="22.75" viewBox="0 0 35.317 22.75"><g transform="translate(0 -6.283)"><path d="M26.969,12.34a8.228,8.228,0,0,0-2.221.309,8.3,8.3,0,0,0-8.1-6.366,8.4,8.4,0,0,0-8.023,6.064c-.092,0-.185-.007-.277-.007a8.346,8.346,0,0,0,0,16.693H26.969a8.346,8.346,0,1,0,0-16.693Zm0,15.554H8.346a7.206,7.206,0,1,1,0-14.412c.223,0,.443.012.662.033l.5.045.107-.488a7.244,7.244,0,0,1,7.031-5.648,7.165,7.165,0,0,1,7.1,6.053l.109.68.648-.236a7.2,7.2,0,1,1,2.461,13.973Z" fill="#009bb4"/><path d="M22.4,15.363a.557.557,0,0,0-.787,0l-6.578,6.576-3.389-3.406a.552.552,0,0,0-.789,0L9.667,19.715a.561.561,0,0,0,0,.793L14.634,25.5a.559.559,0,0,0,.789,0l8.162-8.162a.551.551,0,0,0,0-.791Z" fill="#009bb4"/></g></svg>
+                    </div>
+                    <p class="index__text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus justo. Sed maximus
+                    </p>
+                </div>
+                <div class="index__table-row">
+                    <div class="index__icon">
+                        <svg class="index__icon-img" width="35.317" height="22.75" viewBox="0 0 35.317 22.75"><g transform="translate(0 -6.283)"><path d="M26.969,12.34a8.228,8.228,0,0,0-2.221.309,8.3,8.3,0,0,0-8.1-6.366,8.4,8.4,0,0,0-8.023,6.064c-.092,0-.185-.007-.277-.007a8.346,8.346,0,0,0,0,16.693H26.969a8.346,8.346,0,1,0,0-16.693Zm0,15.554H8.346a7.206,7.206,0,1,1,0-14.412c.223,0,.443.012.662.033l.5.045.107-.488a7.244,7.244,0,0,1,7.031-5.648,7.165,7.165,0,0,1,7.1,6.053l.109.68.648-.236a7.2,7.2,0,1,1,2.461,13.973Z" fill="#009bb4"/><path d="M22.4,15.363a.557.557,0,0,0-.787,0l-6.578,6.576-3.389-3.406a.552.552,0,0,0-.789,0L9.667,19.715a.561.561,0,0,0,0,.793L14.634,25.5a.559.559,0,0,0,.789,0l8.162-8.162a.551.551,0,0,0,0-.791Z" fill="#009bb4"/></g></svg>
+                    </div>
+                    <p class="index__text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus justo. Sed maximus
+                    </p>
+                </div>
+                <div class="index__table-row">
+                    <div class="index__icon">
+                        <svg class="index__icon-img" width="35.317" height="22.75" viewBox="0 0 35.317 22.75"><g transform="translate(0 -6.283)"><path d="M26.969,12.34a8.228,8.228,0,0,0-2.221.309,8.3,8.3,0,0,0-8.1-6.366,8.4,8.4,0,0,0-8.023,6.064c-.092,0-.185-.007-.277-.007a8.346,8.346,0,0,0,0,16.693H26.969a8.346,8.346,0,1,0,0-16.693Zm0,15.554H8.346a7.206,7.206,0,1,1,0-14.412c.223,0,.443.012.662.033l.5.045.107-.488a7.244,7.244,0,0,1,7.031-5.648,7.165,7.165,0,0,1,7.1,6.053l.109.68.648-.236a7.2,7.2,0,1,1,2.461,13.973Z" fill="#009bb4"/><path d="M22.4,15.363a.557.557,0,0,0-.787,0l-6.578,6.576-3.389-3.406a.552.552,0,0,0-.789,0L9.667,19.715a.561.561,0,0,0,0,.793L14.634,25.5a.559.559,0,0,0,.789,0l8.162-8.162a.551.551,0,0,0,0-.791Z" fill="#009bb4"/></g></svg>
+                    </div>
+                    <p class="index__text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus justo. Sed maximus
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
+    <footer class="footer">
+        <div class="wrapper">
+            <div class="footer__content">
+                <div class="footer__left">
+                    <span class="footer__text">
+                        Cabeleila Leila Salão de Beleiza 2023 | Feito por <a class="footer__dev" href="https://gstlongon.github.io/gustavolongon/">Gustavo Longon</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="./js/main.js"></script>
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
-<script src='https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@6.1.8/index.global.min.js'></script>
-<script src="./js/main.js"></script>
 </html>
-
-
-    <!-- <h1>Cadastro de Colaborador</h1>
-    <form id="cadastroForm">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" required>
-        <label for="email">E-mail:</label>
-        <input type="email" id="email" required>
-        <label for="senha">Senha:</label>
-        <input type="password" id="senha" required>
-        <label for="telefone">Telefone:</label>
-        <input type="text" id="telefone">
-        <button type="submit">Cadastrar</button>
-    </form>
-
-    <div>
-        <label for="selectColaborador">Selecione um colaborador:</label>
-        <select id="selectColaborador"></select>
-    </div> -->
