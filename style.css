@@ -133,7 +133,7 @@ svg {}
     width: 100%;
     max-width: 500px;
     height: auto;
-    max-height: 500px;
+    max-height: 600px;
     padding: 30px;
     background-color: #FFF;
     border-radius: 10px;
@@ -173,12 +173,13 @@ svg {}
 .index__label {
     width: 100%;
     height: auto;
-    margin: 0px auto 5px;
+    margin: 5px auto;
     font-size: 16px;
     display: block;
 }
 
-.index__input {
+.index__input,
+.index__select {
     width: 100%;
     height: 50px;
     padding: 5px 10px;
@@ -264,9 +265,6 @@ svg {}
 /* = index
     ========================================================================== */
 
-.index__content-top {
-    flex-direction: column;
-}
 
 .index__left {
     margin-right: auto;
@@ -334,8 +332,8 @@ svg {}
 /* = index
     ========================================================================== */
 
-
-}
+    #eventForm { margin: 30px auto;}
+    }
 
 
 

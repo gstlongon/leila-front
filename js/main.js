@@ -8,13 +8,37 @@ class Main {
 
     saveEvent() {
             document.getElementById('btnAddEvent').addEventListener('click', () => {
+                const secSelect = document.getElementById('servico')
                 const title = document.getElementById('title').value
                 const start = document.getElementById('start').value
                 const description = document.getElementById('description').value
+                let time = 0
+                let timeMode = ''
+
+                if (secSelect.value == 'cabelo-m') {
+                    time = 30
+                    timeMode = 'minutes'
+                } else if (secSelect.value == 'cabelo-f') {
+                    time = 60
+                    timeMode = 'minutes'
+                } else if (secSelect.value == 'progressiva') {
+                    time = 60
+                    timeMode = 'minutes'
+                } else if (secSelect.value == 'maquiagem') {
+                    time = 40
+                    timeMode = 'minutes'
+                } else if (secSelect.value == 'manicure') {
+                    time = 30
+                    timeMode = 'minutes'
+                } else if (secSelect.value == 'manicure-pedicure') {
+                    time = 60
+                    timeMode = 'minutes'
+                }
 
                 const event = {
                 title: title,
                 start: start,
+                end: moment.utc(start).add(time, timeMode).format(),
                 description: description
                 };
 
